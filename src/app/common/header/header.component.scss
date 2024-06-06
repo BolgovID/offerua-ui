@@ -1,0 +1,27 @@
+header {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    gap: 20px;
+    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+
+    .logo-wrapper {
+        display: flex;
+        align-items: center;
+        color: red;
+
+        img {
+            height: 30px;
+        }
+    }
+
+    .tabs {
+        display: flex;
+        gap: 20px;
+        cursor: pointer;
+
+        >*:hover {
+            text-decoration: underline;
+        }
+    }
+}

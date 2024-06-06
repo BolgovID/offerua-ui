@@ -1,0 +1,10 @@
+.main-layout-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.layout-body {
+    background-color: lightgray;
+    padding: 10px;
+}
