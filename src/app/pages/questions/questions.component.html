@@ -19,7 +19,7 @@
       </thead>
 
       <tbody>
-      <tr [routerLink]="'questions/'+row.id" `*ngFor="let row of model.content">
+      <tr [routerLink]="'questions/'+row.id" *ngFor="let row of model.content">
         <td [style]="{ 'color': getColor(row.probability) }">{{ row.probability }} %</td>
         <td>{{ row.question }}</td>
         <td>{{ row.subTopic }}</td>
