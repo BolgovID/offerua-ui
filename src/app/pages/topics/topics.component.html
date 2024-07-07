@@ -1,1 +1,8 @@
-<p>topics works!</p>
+<section class="container">
+    <h1>Interview questions</h1>
+
+    <ul>
+        <li *ngFor="let topic of topics" class="card"><a [routerLink]="topic.id">{{ topic.displayName }}</a></li>
+    </ul>
+
+</section>

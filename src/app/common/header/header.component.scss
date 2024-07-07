@@ -1,27 +1,38 @@
 header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  .logo-wrapper {
     display: flex;
     align-items: center;
-    height: 30px;
+    color: red;
+    gap: 10px;
+
+    img {
+      height: 50px;
+    }
+  }
+
+  .container {
+    gap: 40px;
+  }
+
+  .tabs {
+    display: flex;
+    align-items: center;
     gap: 20px;
-    border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+    cursor: pointer;
 
-    .logo-wrapper {
+    div {
         display: flex;
-        align-items: center;
-        color: red;
-
-        img {
-            height: 30px;
-        }
     }
 
-    .tabs {
-        display: flex;
-        gap: 20px;
-        cursor: pointer;
-
-        >*:hover {
-            text-decoration: underline;
-        }
+    > *:hover {
+      text-decoration: underline;
     }
+  }
 }
