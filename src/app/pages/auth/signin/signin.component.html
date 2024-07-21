@@ -1,0 +1,13 @@
+<div class="card">
+  <h1>Sign in</h1>
+  <div class="input-wrapper">
+    <input type="text" placeholder="Username">
+    <input type="password" placeholder="Password">
+  </div>
+  <button (click)="doSignIn()">Sign In</button>
+  <button (click)="doFuck()">Check data</button>
+  <div class="info">
+    <a [routerLink]="'../forgot-password'">Forgot password?</a>
+    <a [routerLink]="'../signup'">Sign up</a>
+  </div>
+</div>

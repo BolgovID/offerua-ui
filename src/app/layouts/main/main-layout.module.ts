@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-import {MainLayoutComponent} from "./main.component";
+import {MainLayoutComponent} from "./main-layout.component";
 import {RouterModule} from "@angular/router";
 import {TopicsComponent} from "../../pages/topics/topics.component";
 import {QuestionsComponent} from "../../pages/questions/questions.component";

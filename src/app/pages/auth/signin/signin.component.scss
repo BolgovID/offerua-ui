@@ -1,0 +1,73 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: white;
+  padding-bottom: 20px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    color: var(--primal);
+    border-left: 2px solid var(--primal);
+    padding-left: 35px;
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
+
+  .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin: 0 20px;
+
+    input {
+      max-width: 300px;
+      border: none;
+      border-bottom: 2px solid var(--primal-soft);
+      transition: 0.1s;
+      padding: 10px 0;
+      outline: none;
+
+      &:focus {
+        border-bottom-color: var(--primal);
+      }
+    }
+  }
+
+  button {
+    align-self: center;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid var(--primal);
+    color: var(--primal);
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 80px);
+    transition: 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--primal);
+      color: white;
+    }
+  }
+
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 5px;
+
+    a {
+      color: gray;
+      text-decoration: none;
+      font-size: 14px;
+      align-self: center;
+    }
+  }
+}
+

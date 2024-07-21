@@ -1,0 +1,76 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  border-radius: 10px;
+  background-color: white;
+  padding-bottom: 20px;
+  gap: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h1 {
+    color: var(--primal);
+    border-left: 2px solid var(--primal);
+    padding-left: 35px;
+    margin-top: 40px;
+    text-transform: uppercase;
+  }
+
+  mat-icon {
+    align-self: center;
+    font-size: 70px;
+    height: 70px;
+    width: 70px;
+    margin-top: 20px;
+    color: var(--primal);
+  }
+
+  .info {
+    margin: 10px 35px;
+  }
+
+  .input-wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    margin: 0 20px;
+
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid var(--primal-soft);
+      transition: 0.1s;
+      padding: 10px 0;
+      outline: none;
+
+      &:focus {
+        border-bottom-color: var(--primal);
+      }
+    }
+  }
+
+  button {
+    align-self: center;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid var(--primal);
+    color: var(--primal);
+    border-radius: 5px;
+    padding: 10px;
+    width: calc(100% - 80px);
+    transition: 0.1s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--primal);
+      color: white;
+    }
+  }
+
+  a {
+    align-self: center;
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+  }
+}
