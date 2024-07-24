@@ -17,7 +17,9 @@ export class UserService {
   }
 
   signIn(username: string, password: string): Observable<any> {
-    return this.http.post<any>(environment.apiBaseUrl + `/auth/login`, {username, password});
+    return this.http.post<any>(environment.apiBaseUrl + `/auth/login`, {username, password}, {
+      withCredentials: true,
+    });
   }
 
 }

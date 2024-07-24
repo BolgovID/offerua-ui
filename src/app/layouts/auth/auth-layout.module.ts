@@ -1,17 +1,22 @@
 import {NgModule} from "@angular/core";
 import {RouterModule} from "@angular/router";
 import {CommonModule} from "@angular/common";
-import {SigninComponent} from "../../pages/auth/./signin/signin.component";
+import {SigninComponent} from "../../pages/auth/signin/signin.component";
 import {AuthLayoutComponent} from "./auth-layout.component";
 import {VerifyComponent} from "../../pages/auth/verify/verify.component";
 import {SignupComponent} from "../../pages/auth/signup/signup.component";
 import {ResetComponent} from "../../pages/auth/reset/reset.component";
-import {HTTP_INTERCEPTORS} from "@angular/common/http";
-import {CorsInterceptor} from "../../services/interceptors/CorsInterceptor";
+import {VerificationComponent} from "../../pages/verification/verification.component";
+import {MatIcon} from "@angular/material/icon";
 
 @NgModule({
   declarations: [
-    VerifyComponent
+    AuthLayoutComponent,
+    SigninComponent,
+    VerificationComponent,
+    SignupComponent,
+    ResetComponent,
+    VerifyComponent,
   ],
   imports: [
     RouterModule.forChild([
@@ -19,36 +24,17 @@ import {CorsInterceptor} from "../../services/interceptors/CorsInterceptor";
         path: '',
         component: AuthLayoutComponent,
         children: [
-          {
-            path: 'signin',
-            component: SigninComponent
-          },
-          {
-            path: 'signup',
-            component: SignupComponent
-          },
-          {
-            path: 'verify',
-            component: VerifyComponent
-          },
-          {
-            path: 'forgot-password',
-            component: ResetComponent
-          },
+          {path: 'signin', component: SigninComponent},
+          {path: 'signup', component: SignupComponent},
+          {path: 'verify', component: VerifyComponent},
+          {path: 'forgot-password', component: ResetComponent},
           {path: '', redirectTo: '/auth/signin', pathMatch: 'full'},
         ]
       },
     ]),
     CommonModule,
+    MatIcon,
   ],
-  providers:[
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: CorsInterceptor,
-      multi: true
-    },
-  ]
-
 })
 export class AuthLayoutModule {
 }

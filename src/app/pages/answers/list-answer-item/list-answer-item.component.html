@@ -1,0 +1,7 @@
+<section>
+  <ul class="wrapper">
+    <li *ngFor="let answer of answerList; index as i; trackBy: itemTracedBy" >
+      <offer-answer-item [answer]="answer"/>
+    </li>
+  </ul>
+</section>

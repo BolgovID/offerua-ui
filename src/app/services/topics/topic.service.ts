@@ -1,6 +1,6 @@
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import {TopicDto} from "./topic.interface";
+import {TopicDto, TopicDtoList} from "./topic.interface";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment.local";
 
@@ -12,7 +12,7 @@ export class TopicService {
   ) {
   }
 
-    getTopics(): Observable<TopicDto[]> {
+    getTopics(): Observable<TopicDtoList> {
         return this.http.get<TopicDto[]>(environment.apiBaseUrl + '/interview-topics', {withCredentials: true});
     }
 

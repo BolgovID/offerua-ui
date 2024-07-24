@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { TopicService } from '../../services/topics/topic.service';
-import { TopicDto } from '../../services/topics/topic.interface';
+import {Component, OnInit} from '@angular/core';
+import {TopicService} from '../../services/topics/topic.service';
+import {TopicDtoList} from '../../services/topics/topic.interface';
 
 @Component({
   selector: 'offer-topics',
@@ -8,11 +8,12 @@ import { TopicDto } from '../../services/topics/topic.interface';
   styleUrl: './topics.component.scss',
 })
 export class TopicsComponent implements OnInit {
-  topics: TopicDto[];
+  topics: TopicDtoList;
 
   constructor(
     private topicService: TopicService,
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.topicService.getTopics().subscribe({

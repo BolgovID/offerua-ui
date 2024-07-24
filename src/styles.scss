@@ -18,5 +18,22 @@ a {
     width: 100%;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.notify {
+    --mdc-snackbar-container-color: #F4E4D7;
+    --mat-mdc-snack-bar-button-color: black;
+    --mdc-snackbar-supporting-text-color: black;
+
+    .mat-mdc-button {
+        color: #7D5839 !important;
+    }
+}

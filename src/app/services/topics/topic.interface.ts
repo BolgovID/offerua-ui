@@ -3,3 +3,5 @@ export interface TopicDto {
     topicName: string,
     displayName: string
 }
+
+export type TopicDtoList = Array<TopicDto>

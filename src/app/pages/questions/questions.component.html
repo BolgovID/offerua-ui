@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container" *ngIf="model">
   <section class="info">
     <h1>Вопросы с собеседования </h1>
     <p>Всего вопросов: {{ model.totalElements }}</p>
@@ -9,22 +9,6 @@
       <p>Фильтр: </p>
     </div>
 
-    <table>
-      <thead>
-      <tr>
-        <th>Шанс</th>
-        <th>Вопрос</th>
-        <th>Тэг</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <tr [routerLink]="'questions/'+row.id" *ngFor="let row of model.content">
-        <td [style]="{ 'color': getColor(row.probability) }">{{ row.probability }} %</td>
-        <td>{{ row.question }}</td>
-        <td>{{ row.subTopic }}</td>
-      </tr>
-      </tbody>
-    </table>
+    <offer-table-question-item [questions]="model.content"/>
   </section>
 </section>

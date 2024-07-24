@@ -9,7 +9,7 @@ import {QuestionFilterRequest, QuestionPaginationResponse} from '../../services/
   styleUrl: './questions.component.scss'
 })
 export class QuestionsComponent implements OnInit {
-  model: QuestionPaginationResponse;
+  model?: QuestionPaginationResponse;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,11 +26,5 @@ export class QuestionsComponent implements OnInit {
           this.model = response;
         },
       });
-  }
-
-  getColor(chance: number) {
-    if (chance < 30) return 'red';
-    if (chance > 30 && chance < 70) return 'orange';
-    return 'green';
   }
 }

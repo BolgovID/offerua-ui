@@ -5,8 +5,10 @@ export interface IQuestionFilterRequest extends PaginationRequest {
 }
 
 export interface QuestionPaginationResponse extends PaginationResponse {
-    content: QuestionDto[]
+    content: QuestionList
 }
+
+export type QuestionList = Array<QuestionDto>
 
 export interface QuestionDto {
     id: string,

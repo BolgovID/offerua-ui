@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AnswerFilterRequest, AnswersByQuestionResponse} from "../../services/answers/answer.interface";
 import {AnswerService} from "../../services/answers/answer.service";
-import {MASK_DATE} from "../../contants/masks";
 
 @Component({
   selector: 'offer-answers',
@@ -10,8 +9,7 @@ import {MASK_DATE} from "../../contants/masks";
   styleUrl: './answers.component.scss'
 })
 export class AnswersComponent implements OnInit {
-  model: AnswersByQuestionResponse
-  protected readonly MASK_DATE = MASK_DATE;
+  model?: AnswersByQuestionResponse
 
 
   constructor(
@@ -24,7 +22,9 @@ export class AnswersComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('questionId') as string
     this.service.getAnswers(id, new AnswerFilterRequest({pageNo: 0}))
       .subscribe({
-          next: (response) => this.model = response
+          next: (response) => {
+            this.model = response
+          }
         }
       )
   }

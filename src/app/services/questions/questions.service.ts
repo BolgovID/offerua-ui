@@ -13,7 +13,7 @@ export class QuestionService {
   ) {
   }
 
-  getQuestions(uuid: string, filter: QuestionFilterRequest): Observable<QuestionPaginationResponse> {
-    return this.http.get<QuestionPaginationResponse>(environment.apiBaseUrl + `/${uuid}/question`, getQueryParams(filter));
+  getQuestions(id: string, filter: QuestionFilterRequest): Observable<QuestionPaginationResponse> {
+    return this.http.get<QuestionPaginationResponse>(environment.apiBaseUrl + `/questions/topics/${id}`, getQueryParams(filter));
   }
 }

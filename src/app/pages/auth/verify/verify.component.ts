@@ -5,7 +5,7 @@ import {LocalStorageService} from "../../../services/local-storage.service";
 
 @Component({
   selector: 'offer-invite',
-  templateUrl: './verify.component.html',
+  template: ''
 })
 export class VerifyComponent implements OnInit {
   constructor(

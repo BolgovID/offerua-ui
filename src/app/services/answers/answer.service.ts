@@ -13,7 +13,7 @@ export class AnswerService {
   ) {
   }
 
-  getAnswers(uuid: string, filter: AnswerFilterRequest): Observable<AnswersByQuestionResponse> {
-    return this.http.get<AnswersByQuestionResponse>(environment.apiBaseUrl + `/question/${uuid}/answers`, getQueryParams(filter));
+  getAnswers(id: string, filter: AnswerFilterRequest): Observable<AnswersByQuestionResponse> {
+    return this.http.get<AnswersByQuestionResponse>(environment.apiBaseUrl + `/questions/${id}/answers`, getQueryParams(filter));
   }
 }

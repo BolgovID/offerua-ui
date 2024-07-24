@@ -1,8 +1,3 @@
 <section class="container">
-    <h1>Interview questions</h1>
-
-    <ul>
-        <li *ngFor="let topic of topics" class="card"><a [routerLink]="topic.id">{{ topic.displayName }}</a></li>
-    </ul>
-
+  <offer-list-topic-items [topic-item-list]="topics"/>
 </section>

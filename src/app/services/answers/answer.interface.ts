@@ -2,7 +2,7 @@ import {PaginationRequest, PaginationResponse} from "../../interfaces/pagination
 import {QuestionDto} from "../questions/questions.interface";
 
 export interface AnswerPaginationResponse extends PaginationResponse {
-  content: AnswerDto[]
+  content: AnswerList
 }
 
 export interface IAnswerFilterRequest extends PaginationRequest {
@@ -21,6 +21,8 @@ export interface AnswerDto {
   "createdBy": string,
   "createdDate": Date
 }
+
+export type AnswerList = Array<AnswerDto>
 
 export class AnswerFilterRequest implements IAnswerFilterRequest {
   pageNo = 0;

@@ -25,45 +25,5 @@
     .filter {
       width: 200px;
     }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-
-      th {
-        border-bottom: 1px solid #ddd;
-        padding: 8px;
-        text-align: left;
-      }
-
-      tbody {
-        width: 100%;
-
-        tr {
-          &:hover {
-            cursor: pointer;
-            text-decoration: underline;
-          }
-
-          td {
-            border-bottom: 1px solid #ddd;
-            padding: 8px;
-            &:first-child {
-              text-align: right;
-            }
-
-            &:nth-child(1) {
-              width: 5%;
-              min-width: 100px;
-            }
-
-            &:nth-child(3) {
-              width: 30%;
-              min-width: 100px;
-            }
-          }
-        }
-      }
-    }
   }
 }
