@@ -8,4 +8,5 @@ import {TopicDto} from "../../../services/topics/topic.interface";
 })
 export class TopicItemComponent {
   @Input('topic-item') topic!: TopicDto;
+  @Input('topic-count') count!: number;
 }

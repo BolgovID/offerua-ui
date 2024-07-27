@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {TopicDto, TopicDtoList} from "../../../services/topics/topic.interface";
+import {TopicDtoList, TopicDtoWithQuestionCount} from "../../../services/topics/topic.interface";
 
 @Component({
   selector: 'offer-list-topic-items',
@@ -9,7 +9,7 @@ import {TopicDto, TopicDtoList} from "../../../services/topics/topic.interface";
 export class ListTopicItemsComponent {
   @Input('topic-item-list') topics: TopicDtoList;
 
-  itemTracedBy(index: number, item: TopicDto) {
-    return item.id
+  itemTracedBy(index: number, item: TopicDtoWithQuestionCount) {
+    return item.topicDto.id
   }
 }

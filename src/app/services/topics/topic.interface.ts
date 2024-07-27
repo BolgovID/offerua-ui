@@ -4,4 +4,9 @@ export interface TopicDto {
     displayName: string
 }
 
-export type TopicDtoList = Array<TopicDto>
+export interface TopicDtoWithQuestionCount {
+   topicDto: TopicDto,
+   questionCount: number
+}
+
+export type TopicDtoList = Array<TopicDtoWithQuestionCount>

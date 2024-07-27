@@ -9,6 +9,7 @@ import { RequestStatusHandlerInterceptor } from "./services/interceptors/Request
 import { AuthLayoutModule } from "./layouts/auth/auth-layout.module";
 import { MatIcon } from "@angular/material/icon";
 import { ErrorPageComponent } from './pages/error-page/error-page.component';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
     AuthLayoutModule,
     MatSnackBarModule,
     MatIcon,
+    BreadcrumbModule
   ],
   providers: [
     provideHttpClient(withInterceptorsFromDi()),
