@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.snakeBarService.onMessage$.subscribe((message) => {
-      this.snakeBar.open(message, "Yes, Sir!", { verticalPosition: 'top', duration: 80000, horizontalPosition: 'end', panelClass: ['notify'] })
+      this.snakeBar.open(message, "Got it", { verticalPosition: 'top', duration: 8000, horizontalPosition: 'end', panelClass: ['notify'] })
     })
   }
 

@@ -1,7 +1,7 @@
-import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from "@angular/common/http";
-import {catchError, Observable, throwError} from "rxjs";
-import {SnakeBarService} from "../snake-bar.service";
-import {Injectable} from "@angular/core";
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { catchError, Observable, throwError } from "rxjs";
+import { SnakeBarService } from "../snake-bar.service";
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class RequestStatusHandlerInterceptor implements HttpInterceptor {
@@ -12,7 +12,7 @@ export class RequestStatusHandlerInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    const cloneRequest = req.clone({url: req.url})
+    const cloneRequest = req.clone({ url: req.url })
 
     return next.handle(cloneRequest).pipe(
       catchError(response => {
@@ -29,11 +29,15 @@ export class RequestStatusHandlerInterceptor implements HttpInterceptor {
       this.snakeBarService.showMessage(response.status + ' - ' + response.error.message)
     }
 
-    if (response.status == 403) {
-      this.snakeBarService.showMessage(response.status + ' - ' + 'Вы чорт залогинтес')
+    else if (response.status == 403) {
+      this.snakeBarService.showMessage(response.status + ' - ' + response.error.message)
     }
 
-    if (response.status >= 500) {
+    else if (response.status >= 500) {
+      this.snakeBarService.showMessage(response.status + ' - ' + response.error.message)
+    }
+
+    else {
       this.snakeBarService.showMessage(response.status + ' - ' + response.error.message)
     }
   }

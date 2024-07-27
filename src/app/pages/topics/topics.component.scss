@@ -2,9 +2,16 @@
   display: flex;
   justify-content: center;
   width: 100%;
+  align-items: start;
+  height: 100%;
 }
 
 .container {
   flex-direction: column;
+  backdrop-filter: blur(100px);
   gap: 10px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.2);
+  margin: 10px;
 }

@@ -1,0 +1,16 @@
+<section [routerLink]="'questions/'+question.id">
+  <div class="meta-info">
+    <div class="topic">
+      <mat-icon>topic</mat-icon>
+      <p>Java Collections</p>
+    </div>
+    <div class="probability">
+      <mat-icon title="Probability">receipt_long</mat-icon>
+      <p [style.color]="getColor(question.probability)">{{ question.probability }}</p>
+      <mat-icon>percent</mat-icon>
+    </div>
+  </div>
+  <div class="question">
+    <p>{{ question.question }}</p>
+  </div>
+</section>

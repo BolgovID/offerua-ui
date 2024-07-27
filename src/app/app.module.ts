@@ -8,10 +8,12 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {RequestStatusHandlerInterceptor} from "./services/interceptors/RequestStatusHandlerInterceptor";
 import {AuthLayoutModule} from "./layouts/auth/auth-layout.module";
 import {MatIcon} from "@angular/material/icon";
+import { ErrorPageComponent } from './pages/error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

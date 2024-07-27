@@ -47,7 +47,7 @@
         gap: 10px;
 
         .username{
-          font-size: 20px;
+          font-size: var(--primal-font);
         }
 
         .profile-photo-wrapper {
@@ -70,7 +70,7 @@
 
       .date {
         color: gray;
-        font-size: 16px;
+        font-size: var(--secondary-font)
       }
     }
   }

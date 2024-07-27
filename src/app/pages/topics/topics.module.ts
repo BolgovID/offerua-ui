@@ -4,6 +4,7 @@ import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import {TopicItemComponent} from "./topic-item/topic-item.component";
 import {ListTopicItemsComponent} from "./list-topic-items/list-topic-items.component";
+import {MatIcon} from "@angular/material/icon";
 
 
 @NgModule({
@@ -12,10 +13,11 @@ import {ListTopicItemsComponent} from "./list-topic-items/list-topic-items.compo
     ListTopicItemsComponent,
     TopicItemComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule,
+        MatIcon
+    ],
 })
 export class TopicsModule {
 

@@ -8,6 +8,8 @@ import {SignupComponent} from "../../pages/auth/signup/signup.component";
 import {ResetComponent} from "../../pages/auth/reset/reset.component";
 import {VerificationComponent} from "../../pages/verification/verification.component";
 import {MatIcon} from "@angular/material/icon";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {DirectivesModule} from "../../directives/directives.module";
 
 @NgModule({
   declarations: [
@@ -32,6 +34,9 @@ import {MatIcon} from "@angular/material/icon";
         ]
       },
     ]),
+    FormsModule,
+    ReactiveFormsModule,
+    DirectivesModule,
     CommonModule,
     MatIcon,
   ],

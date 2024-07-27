@@ -1,0 +1,17 @@
+:host{
+  display: flex;
+}
+
+section {
+  display: flex;
+  width: 100%;
+  border-radius: var(--border-radius);
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: auto;
+    gap: 10px;
+  }
+}

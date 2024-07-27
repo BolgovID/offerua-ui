@@ -1,0 +1,42 @@
+section {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: var(--border-radius);
+  width: 100%;
+  padding: var(--content-padding);
+
+  .question {
+    display: flex;
+
+    p {
+      font-size: var(--primal-font);
+    }
+  }
+
+  .meta-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    color: gray;
+
+    p {
+      font-size: var(--secondary-font);
+    }
+
+    mat-icon {
+      font-size: 18px;
+
+    }
+
+    .probability {
+      display: flex;
+    }
+
+    .topic {
+      display: flex;
+    }
+  }
+}

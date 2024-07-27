@@ -1,0 +1,7 @@
+<section>
+  <ul>
+    <li *ngFor="let question of testquestions; index as i; trackBy: itemTracedBy">
+      <offer-question-item [question]="question"></offer-question-item>
+    </li>
+  </ul>
+</section>

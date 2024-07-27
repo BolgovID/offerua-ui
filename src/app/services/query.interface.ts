@@ -1,6 +1,6 @@
 import { IPropertyAny, IPropertyString } from "../interfaces/global.interface";
 
-export const getQueryParams = (payload?: IPropertyAny | string, objectKey?: string) => {
+export const getQueryParams = (payload?: IPropertyAny | string, objectKey?: string): IPropertyString => {
     const params: IPropertyString = {};
 
     if (typeof (payload) === 'object') {
@@ -14,5 +14,5 @@ export const getQueryParams = (payload?: IPropertyAny | string, objectKey?: stri
         params[objectKey ? objectKey : 'name'] = payload;
     }
 
-    return { params };
+    return params;
 }

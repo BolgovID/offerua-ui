@@ -16,7 +16,7 @@ export class VerificationComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
-        let data = params['data'] || null;
+        const data = params['data'] || null;
         if (data) {
           this.userService.confirmRegistration(data)
             .subscribe((response: any) => {

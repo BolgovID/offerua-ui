@@ -1,10 +1,10 @@
-import {Injectable} from "@angular/core";
-import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../environments/environment.local";
-import {Observable} from "rxjs";
-import {UserDto} from "./user.interface";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { environment } from "../../../environments/environment.local";
+import { Observable } from "rxjs";
+import { UserDto } from "./user.interface";
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class UserService {
 
   constructor(
@@ -17,9 +17,8 @@ export class UserService {
   }
 
   signIn(username: string, password: string): Observable<any> {
-    return this.http.post<any>(environment.apiBaseUrl + `/auth/login`, {username, password}, {
+    return this.http.post<any>(environment.apiBaseUrl + `/auth/login`, { username, password }, {
       withCredentials: true,
     });
   }
-
 }

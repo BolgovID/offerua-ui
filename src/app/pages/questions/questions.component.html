@@ -1,14 +1,23 @@
-<section class="container" *ngIf="model">
-  <section class="info">
-    <h1>Вопросы с собеседования </h1>
-    <p>Всего вопросов: {{ model.totalElements }}</p>
-  </section>
-
-  <section class="content">
-    <div class="filter">
-      <p>Фильтр: </p>
+<section *ngIf="model" class="container">
+  <h1>Interview question</h1>
+  <div class="search-body">
+    <div class="filter-wrapper">
+      <offer-question-filter></offer-question-filter>
     </div>
-
-    <offer-table-question-item [questions]="model.content"/>
-  </section>
+    <div class="search-results">
+      <div class="suggest-question">
+        <input type="text" placeholder="Suggest a new question"/>
+        <button>+</button>
+      </div>
+      <div class="meta">
+        <offer-question-metainfo [numberOfQuestions]="model.totalElements"></offer-question-metainfo>
+      </div>
+      <div class="question-wrapper">
+        <offer-list-question-item [questions]="model.content"/>
+      </div>
+    </div>
+    <div class="tradings">
+      <offer-question-trading-members/>
+    </div>
+  </div>
 </section>

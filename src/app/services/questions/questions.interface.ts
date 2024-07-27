@@ -8,7 +8,7 @@ export interface QuestionPaginationResponse extends PaginationResponse {
     content: QuestionList
 }
 
-export type QuestionList = Array<QuestionDto>
+export type QuestionList = QuestionDto[]
 
 export interface QuestionDto {
     id: string,

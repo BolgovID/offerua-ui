@@ -9,9 +9,10 @@
   flex-direction: column;
   width: 100%;
 
+
   .question{
     padding: 20px;
-    font-size: 30px;
+    font-size: var(--primal-font);
     font-weight: bold;
   }
 }
