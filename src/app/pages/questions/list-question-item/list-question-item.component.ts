@@ -8,10 +8,6 @@ import {QuestionDto, QuestionList} from "../../../services/questions/questions.i
 })
 export class ListQuestionItemComponent {
   @Input() questions: QuestionList
- 
-  get testquestions(){
-    return [...this.questions, ...this.questions, ...this.questions, ...this.questions, ...this.questions, ...this.questions, ...this.questions, ...this.questions, ...this.questions, ...this.questions];
-  }
 
   itemTracedBy(index: number, item: QuestionDto) {
     return item.id

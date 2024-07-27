@@ -1,3 +1,39 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$offerua-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($offerua-theme);
+}
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($offerua-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($offerua-theme);
 html,
 * {
   margin: 0;
@@ -14,7 +50,7 @@ a {
 
 .container {
   display: flex;
-  max-width: 1300px;
+  max-width: 1200px;
   width: 100%;
 }
 
@@ -26,13 +62,7 @@ body {
 body {
   margin: 0;
   font-family: InterVariable, sans-serif;
-
-  background: radial-gradient(18% 28% at 24% 50%, #C1C6F6FF 7%, #073AFF00 100%),
-  radial-gradient(70% 53% at 36% 76%, #C1C6F6FF 0%, #073AFF00 100%),
-  radial-gradient(42% 53% at 15% 94%, #FABBD3F5 0%, #073AFF00 100%),
-  radial-gradient(35% 56% at 91% 74%, #C1C6F6FF 1%, #073AFF00 100%),
-  radial-gradient(74% 86% at 67% 38%, #FABBD3F5 0%, #073AFF00 100%),
-  linear-gradient(125deg, #FBF2DAFF 61%, #FFC6C6FF 99%);
+  background: var(--background-primal);
 }
 
 .notify {
@@ -44,3 +74,6 @@ body {
     color: var(--primal) !important;
   }
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

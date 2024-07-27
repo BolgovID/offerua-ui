@@ -1,3 +1,16 @@
-<section class="container">
-  <offer-list-topic-items [topic-item-list]="topics"/>
+<section class="page-content">
+  <section class="content-header">
+    <div class="container">
+      <div class="header-title">
+        <p class="breadcrumbs"> > Topics</p>
+        <h1>Interview topics</h1>
+        <p>Choose the language/technologies</p>
+      </div>
+    </div>
+  </section>
+  <section class="topics-content" *ngIf="topics">
+    <section class="container">
+      <offer-list-topic-items [topic-item-list]="topics" />
+    </section>
+  </section>
 </section>

@@ -1,0 +1,33 @@
+<section>
+    <div class="search-tools">
+        <div class="search-line">
+            <mat-icon>search</mat-icon>
+            <input type="text" placeholder="Search" />
+        </div>
+        <button class="clear-btn">Clear</button>
+        <button class="search-btn">Search</button>
+    </div>
+    <div class="filter-tools">
+        <div class="filters">
+            <div class="select-wrapper">
+                <mat-icon>filter_alt</mat-icon>
+                <select name="topic-names" id="topic-names">
+                    <option value="None" selected>Choose topic</option>
+                    <option value="Java Collections">Collections</option>
+                    <option value="Java Multithreading">Multithreading</option>
+                    <option value="Java Core">Core</option>
+                    <option value="Spring Boot">Spring boot</option>
+                </select>
+            </div>
+            <div class="select-wrapper">
+                <mat-icon>filter_list</mat-icon>
+                <select name="sort-by" id="sort-by">
+                    <option value="Id" selected>Sort by</option>
+                    <option value="Name">Name</option>
+                    <option value="Probability">Probability</option>
+                </select>
+            </div>
+        </div>
+        <button class="clear-btn">Clear all</button>
+    </div>
+</section>

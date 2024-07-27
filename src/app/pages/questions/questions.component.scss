@@ -1,95 +1,86 @@
 :host {
   display: flex;
-  justify-content: center;
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  background: white;
-  border-top-left-radius: var(--border-radius);
-  border-top-right-radius: var(--border-radius);
-  padding: 20px;
+.page-content {
+  width: 100%;
+  background-color: var(--background-primary);
 
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  gap: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: var(--border-radius);
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(100px);
-
-  .search-body {
+  .content-header {
     display: flex;
-    gap: 20px;
-    padding: 0 20px;
+    justify-content: center;
 
-    div {
-      width: 100%;
+    width: 100%;
+    background-color: var(--background-secondary);
+    padding: 50px 0;
 
-      &.filter-wrapper, &.tradings {
-        max-width: 250px;
-      }
-
-    }
-
-    .search-results {
+    .container {
       display: flex;
+      ;
       flex-direction: column;
+      gap: 40px;
 
-      .suggest-question {
+
+      .header-title {
         display: flex;
-        flex-direction: row;
-        width: 100%;
+        flex-direction: column;
+        gap: 15px;
+
+        h1 {
+          font-size: var(--page-header-font-size);
+        }
+
+        p {
+          font-size: var(--metainfo-font-size);
+          color: gray;
+        }
+
+        .breadcrumbs {
+          font-weight: bold;
+          margin: 15px 0;
+        }
+      }
+    }
+  }
+
+  .search-content {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-top: 35px;
+
+
+    .grid {
+      display: grid;
+      width: 100%;
+      grid-template-columns: 2fr 1fr;
+      max-height: 40px;
+      gap: 20px;
+
+      .search-metainfo {
+        display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 20px;
-        background: white;
-        border: 2px solid var(--primal-soft);
-        border-radius: var(--border-radius);
-        box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.2);
 
+        div {
+          display: flex;
+          height: 100%;
+          align-items: center;
 
-        input {
-          width: 100%;
-          text-decoration: none;
-          padding: 10px;
-          outline: none;
-          border: none;
-          border-radius: var(--border-radius);
-
-
-          &:focus {
-            border: none;
-            outline: none;
+          p {
+            color: gray;
+            font-weight: bold;
           }
         }
-
-        input::placeholder {
-          color: var(--primal-soft)
-        }
-
-        button {
-          background: var(--primal);
-          color: white;
-          border: none;
-          margin: 5px;
-          border-radius: var(--border-radius);
-          width: 30px;
-          height: 30px;
-          text-align: center;
-          text-decoration: none;
-          font-weight: bold;
-          display: inline-block;
-          font-size: 16px;
-        }
       }
     }
 
-
+    .additional-info {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

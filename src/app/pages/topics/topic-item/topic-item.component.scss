@@ -2,41 +2,49 @@
   display: flex;
   justify-content: center;
   width: 100%;
+
 }
 
 .card {
   display: flex;
   text-align: center;
-  margin: 20px;
-  padding: 10px;
   width: 100%;
+  padding: 15px;
+  background: transparent;
+  border-radius: var(--border-radius);
   border: 1px solid lightgray;
-  border-radius: 8px;
   cursor: pointer;
-  background: white;
   justify-content: space-between;
 
-  mat-icon{
+  mat-icon {
     color: var(--primal);
     margin: 5px;
   }
 
-  .info{
+  .info {
     display: flex;
     flex-direction: column;
+    width: 100%;
     align-items: flex-end;
-    a {
-      font-weight: bold;
-      width: 100%;
-      height: 100%;
-      padding: 10px;
-      border-radius: 8px;
+    gap: 15px;
+
+    .question-count {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+
+      p {
+        display: flex;
+        color: gray;
+        font-size: var(--secondary-font);
+      }
     }
 
-    p{
-      color: gray;
-      padding-right: 10px;
-      font-size: var(--secondary-font);
+    a {
+      display: flex;
+      font-weight: bold;
+      height: 100%;
+      border-radius: 8px;
     }
   }
 
