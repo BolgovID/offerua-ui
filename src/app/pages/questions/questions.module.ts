@@ -7,6 +7,12 @@ import { ListQuestionItemComponent } from './list-question-item/list-question-it
 import { MatIcon } from "@angular/material/icon";
 import { SearchQuestionComponent } from './search-question/search-question.component';
 import { BannerItemComponent } from './banner-item/banner-item.component';
+import { AddQuestionComponent } from './add-question/add-question.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { CustomInputsModule } from "../../common/inputs/inputs.module";
 
 @NgModule({
   declarations: [
@@ -14,14 +20,16 @@ import { BannerItemComponent } from './banner-item/banner-item.component';
     QuestionItemComponent,
     ListQuestionItemComponent,
     SearchQuestionComponent,
-    BannerItemComponent
+    BannerItemComponent,
+    AddQuestionComponent,
   ],
   imports: [
     CommonModule,
     RouterModule,
     MatIcon,
+    FormsModule,
+    ReactiveFormsModule,
+    CustomInputsModule,
   ]
 })
-export class QuestionsModule {
-
-}
+export class QuestionsModule { }
