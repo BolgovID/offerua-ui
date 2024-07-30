@@ -4,10 +4,10 @@ import { RouterModule } from "@angular/router";
 import { QuestionsComponent } from "../../pages/questions/questions.component";
 import { CommonModule } from "@angular/common";
 import { AnswersComponent } from "../../pages/answers/answers.component";
-import { TopicsModule } from "../../pages/topics/topics.module";
+import { TechnologyModule as TechModule } from "../../pages/technologies/tech.module";
 import { MatIcon } from "@angular/material/icon";
 import { HeaderComponent } from "../../common/header/header.component";
-import { TopicsComponent } from "../../pages/topics/topics.component";
+import { TechnologyComponent as TechComponent } from "../../pages/technologies/tech.component";
 import { QuestionsModule } from "../../pages/questions/questions.module";
 import { AnswersModule } from "../../pages/answers/answers.module";
 
@@ -23,11 +23,11 @@ import { AnswersModule } from "../../pages/answers/answers.module";
         component: MainLayoutComponent,
         children: [
           {
-            path: 'topics',
-            data: { breadcrumb: 'Topics' },
+            path: 'technologies',
+            data: { breadcrumb: 'Technologies' },
             children: [
               {
-                path: ':topicId',
+                path: ':tech',
                 children: [
                   {
                     path: 'questions',
@@ -39,10 +39,10 @@ import { AnswersModule } from "../../pages/answers/answers.module";
                   { path: '', component: QuestionsComponent }
                 ]
               },
-              { path: '', component: TopicsComponent, },
+              { path: '', component: TechComponent, },
             ],
           },
-          { path: '', redirectTo: '/main/topics', pathMatch: 'full' },
+          { path: '', redirectTo: '/main/technologies', pathMatch: 'full' },
         ]
       },
     ]),
@@ -53,7 +53,7 @@ import { AnswersModule } from "../../pages/answers/answers.module";
 
     // pages modules
     AnswersModule,
-    TopicsModule,
+    TechModule,
     QuestionsModule,
   ],
 })

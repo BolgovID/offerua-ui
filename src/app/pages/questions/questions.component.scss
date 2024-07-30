@@ -8,14 +8,14 @@
 
 .page-content {
   width: 100%;
-  background-color: var(--background-primary);
+  background-color: var(--bg-primal);
 
   .content-header {
     display: flex;
     justify-content: center;
 
     width: 100%;
-    background-color: var(--background-secondary);
+    background-color: var(--bg-secondary);
     padding: 50px 0;
 
     .container {
@@ -75,6 +75,39 @@
             font-weight: bold;
           }
         }
+
+        .suggest {
+          gap: 5px;
+          cursor: pointer;
+          padding: 5px;
+          border-radius: var(--border-radius);
+
+
+          mat-icon {
+            color: var(--primal);
+          }
+
+          a {
+            font-weight: bold;
+            color: var(--primal);
+
+          }
+
+          // &:hover {
+
+          //   a,
+          //   mat-icon {
+          //     color: var(--primal);
+
+          //   }
+          // }
+        }
+      }
+
+      .search-results {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
       }
     }
 

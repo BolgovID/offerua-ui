@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {QuestionService} from '../../services/questions/questions.service';
-import {QuestionFilterRequest, QuestionPaginationResponse} from '../../services/questions/questions.interface';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { QuestionService } from '../../services/questions/questions.service';
+import { AllTechQuestionResponse, QuestionPaginationRequest, QuestionPaginationResponse } from '../../services/questions/questions.interface';
 
 @Component({
   selector: 'offer-questions',
@@ -9,7 +9,8 @@ import {QuestionFilterRequest, QuestionPaginationResponse} from '../../services/
   styleUrl: './questions.component.scss'
 })
 export class QuestionsComponent implements OnInit {
-  model?: QuestionPaginationResponse;
+  model?: AllTechQuestionResponse
+  isEditing = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,13 +19,21 @@ export class QuestionsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('topicId') as string;
+    const techName = this.route.snapshot.paramMap.get('tech') as string;
 
-    this.service.getQuestions(id, new QuestionFilterRequest({}))
+    this.service.getQuestions(techName, new QuestionPaginationRequest({}))
       .subscribe({
         next: (response) => {
           this.model = response;
         },
       });
+
+      setTimeout(() => {
+        this.switchEditingMode();
+      }, 300);
+  }
+
+  switchEditingMode() {
+    this.isEditing = !this.isEditing
   }
 }

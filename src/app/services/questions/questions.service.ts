@@ -3,8 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { environment } from "../../../environments/environment.local";
 import { Observable } from "rxjs";
 import { getQueryParams } from "../query.interface";
-import { QuestionFilterRequest, QuestionPaginationResponse } from "./questions.interface";
-import { IPropertyString } from "../../interfaces/global.interface";
+import { AllTechQuestionResponse, QuestionPaginationRequest, QuestionPaginationResponse } from "./questions.interface";
 
 @Injectable({ providedIn: 'root' })
 export class QuestionService {
@@ -13,12 +12,12 @@ export class QuestionService {
     public http: HttpClient,
   ) { }
 
-  getQuestions(id: string, filter: QuestionFilterRequest): Observable<QuestionPaginationResponse> {
+  getQuestions(technologyName: string, filter: QuestionPaginationRequest): Observable<AllTechQuestionResponse> {
     const options = {
       params: getQueryParams(filter),
       withCredentials: true,
     };
 
-    return this.http.get<QuestionPaginationResponse>(environment.apiBaseUrl + `/questions/topics/${id}`, options);
+    return this.http.get<AllTechQuestionResponse>(environment.apiBaseUrl + `/technologies/${technologyName}/questions`, options);
   }
 }

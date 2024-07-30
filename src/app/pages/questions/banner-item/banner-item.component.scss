@@ -1,7 +1,7 @@
 .contact-info {
     display: flex;
     flex-direction: column;
-    background-color: var(--background-secondary);
+    background-color: var(--bg-secondary);
     border-radius: var(--border-radius);
     padding: 20px;
     gap: 20px;
@@ -12,12 +12,13 @@
       gap: 5px;
 
       h2 {
-        font-size: var(--content-header);
+        font-size: var(--content-header-font-size);
         color: var(--primal);
       }
 
       p {
         color: var(--primal-soft);
+        font-size: var(--content-font-size);
       }
 
     }
@@ -36,7 +37,7 @@
       background-color: transparent;
       border: 2px solid var(--primal);
       color: var(--primal);
-      border-radius: 5px;
+      border-radius: var(--border-radius);
       padding: 10px;
       width: 100%;
       transition: 0.1s;
@@ -54,8 +55,8 @@
       justify-content: center;
       width: 50px;
       height: 50px;
-      background: var(--primal-soft);
-      opacity: 0.7;
+
+      background: var(--bg-icon);
       border-radius: 50px;
 
       mat-icon {

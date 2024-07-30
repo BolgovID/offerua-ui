@@ -1,0 +1,7 @@
+<mat-form-field class="example-full-width">
+    <mat-label>Choose Topic</mat-label>
+    <input type="text" placeholder="Choose one" matInput [matAutocomplete]="auto" (input)="onTyping($event)">
+    <mat-autocomplete autoActiveFirstOption [displayWith]="displayFn" #auto="matAutocomplete" (optionSelected)="onSelect($event)" panelClass="custom-autocomplete">
+        <mat-option *ngFor="let option of filteredOptions" [value]="option">{{ option.name }}</mat-option>
+    </mat-autocomplete>
+</mat-form-field>

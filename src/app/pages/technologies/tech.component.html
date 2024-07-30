@@ -2,15 +2,15 @@
   <section class="content-header">
     <div class="container">
       <div class="header-title">
-        <p class="breadcrumbs"> > Topics</p>
-        <h1>Interview topics</h1>
+        <p class="breadcrumbs"> > Technologies</p>
+        <h1>Interview technologies topics</h1>
         <p>Choose the language/technologies</p>
       </div>
     </div>
   </section>
-  <section class="topics-content" *ngIf="topicList">
+  <section class="topics-content" *ngIf="techList">
     <section class="container">
-      <offer-list-topic-items [topic-item-list]="topicList" />
+      <offer-list-tech-items [tech-item-list]="techList" />
     </section>
   </section>
 </section>

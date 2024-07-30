@@ -1,19 +1,19 @@
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
-import { TopicDtoList } from "./topic.interface";
+import { TechDtoList as TechDtoList } from "./technology.interface";
 import {Observable} from "rxjs";
 import {environment} from "../../../environments/environment.local";
 
 @Injectable({ providedIn: 'root' })
-export class TopicService {
+export class TechnologyService {
 
   constructor(
     public http: HttpClient,
   ) {
   }
 
-    getTopics(): Observable<TopicDtoList> {
-        return this.http.get<TopicDtoList>(environment.apiBaseUrl + '/interview-topics', {withCredentials: true});
+    getTechnologies(): Observable<TechDtoList> {
+        return this.http.get<TechDtoList>(environment.apiBaseUrl + '/technologies', {withCredentials: true});
     }
 
 }

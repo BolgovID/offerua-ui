@@ -1,7 +1,0 @@
-<section>
-  <ul>
-    <li *ngFor="let topic of topics; index as i; trackBy: itemTracedBy">
-      <offer-topic-item [topic-item]="topic.topicDto" [topic-count]="topic.questionCount"/>
-    </li>
-  </ul>
-</section>

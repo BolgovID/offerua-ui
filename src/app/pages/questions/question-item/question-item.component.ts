@@ -10,7 +10,7 @@ export class QuestionItemComponent {
   @Input() question: QuestionDto;
 
   getColor(chance: number) {
-    if (chance < 30) return 'red';
+    if (chance <= 30) return 'red';
     if (chance > 30 && chance < 70) return 'orange';
     return 'green';
   }

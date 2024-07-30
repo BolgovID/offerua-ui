@@ -1,0 +1,27 @@
+<section>
+    <div class="question-form-title">
+        <div class="icon-wrapper">
+            <mat-icon>post_add</mat-icon>
+        </div>
+        <h2>Add new question</h2>
+    </div>
+    <div class="question-form-sections">
+        <form [formGroup]="questionForm">
+            <textarea placeholder="Put your question here" rows="3" formControlName="question"></textarea>
+            <div class="submit-fields">
+                <div class="topic-configurations">
+                    <div class="select-wrapper">
+
+
+                        <offer-autocomplete [filterBy]="'name'" [options]="topics" (select)="onSelect($event)" (typing)="onTyping($event)" />
+
+
+                    </div>
+                </div>
+                <div>
+                    <button (click)="addQuestion()">Add Question</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

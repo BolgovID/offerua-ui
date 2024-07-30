@@ -1,0 +1,7 @@
+<section>
+  <ul>
+    <li *ngFor="let tech of technologies; index as i; trackBy: itemTracedBy">
+      <offer-tech-item [tech-item]="tech.technologyDto" [question-count]="tech.questionCount"/>
+    </li>
+  </ul>
+</section>

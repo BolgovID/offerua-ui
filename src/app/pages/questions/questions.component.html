@@ -2,12 +2,12 @@
   <section class="content-header">
     <div class="container">
       <div class="header-title">
-        <p class="breadcrumbs"> > Topics > Java > Questions</p>
+        <p class="breadcrumbs"> > Technologies > Java > Questions</p>
         <h1>Interview questions</h1>
         <p>Find the most popular interview questions</p>
       </div>
-      <div class="search">
-        <offer-search-question />
+      <div class="search" *ngIf="model">
+        <offer-search-question [topics]="model.topics"/>
       </div>
     </div>
   </section>
@@ -16,12 +16,21 @@
       <div class="grid">
         <div class="search-metainfo">
           <div>
-            <p>Found {{model.totalElements}} questions</p>
+            <p>Found {{model.questions.totalElements}} questions</p>
+          </div>
+          <div class="suggest">
+            <mat-icon>add</mat-icon>
+            <a (click)="switchEditingMode()">Suggest a new question</a>
           </div>
         </div>
         <div></div>
         <div class="search-results">
-          <offer-list-question-item [questions]="model.content"></offer-list-question-item>
+          <div *ngIf="isEditing">
+           <offer-add-question [topics]="model.topics"/>
+          </div>
+          <div>
+            <offer-list-question-item [questions]="model.questions.content"></offer-list-question-item>
+          </div>
         </div>
         <div class="additional-info">
           <offer-banner-item />
