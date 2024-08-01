@@ -9,10 +9,10 @@ import { SearchQuestionComponent } from './search-question/search-question.compo
 import { BannerItemComponent } from './banner-item/banner-item.component';
 import { AddQuestionComponent } from './add-question/add-question.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { CustomInputsModule } from "../../common/inputs/inputs.module";
+import { TopicAutocompleteComponent } from './add-question/topic-autocomplete/topic-autocomplete.component';
+import { DirectivesModule } from "../../directives/directives.module";
+import { PipesModule } from "../../pipes/pipes.module";
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { CustomInputsModule } from "../../common/inputs/inputs.module";
     SearchQuestionComponent,
     BannerItemComponent,
     AddQuestionComponent,
+    TopicAutocompleteComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +31,8 @@ import { CustomInputsModule } from "../../common/inputs/inputs.module";
     FormsModule,
     ReactiveFormsModule,
     CustomInputsModule,
+    DirectivesModule,
+    PipesModule
   ]
 })
 export class QuestionsModule { }

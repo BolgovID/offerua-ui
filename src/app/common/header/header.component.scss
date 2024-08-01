@@ -27,6 +27,8 @@ header {
     gap: 20px;
     color: gray;
     cursor: pointer;
+    color: var(--text-color);
+
 
     div {
       display: flex;

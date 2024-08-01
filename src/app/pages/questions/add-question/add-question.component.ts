@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TopicDto, TopicList } from '../../../services/questions/questions.interface';
 import { Observable, map, startWith } from 'rxjs';
+import { addQuestionValidator } from '../../../contants/validators';
+import { SnakeBarService } from '../../../services/snake-bar.service';
 
 export interface dto {
   question: string,
@@ -25,14 +27,17 @@ export class AddQuestionComponent implements OnInit {
   typedTopic: string;
   option: string;
 
+  @Output() createdQuestion = new EventEmitter<any>
+
   constructor(
     private formBuilder: FormBuilder,
+    private snakeBar: SnakeBarService
   ) { }
 
   ngOnInit(): void {
     this.questionForm = this.formBuilder.group({
-      question: [''],
-      topicName: [''],
+      question: ['', addQuestionValidator],
+      topicName: ['', Validators.required],
       topicId: [''],
     })
   }
@@ -42,18 +47,20 @@ export class AddQuestionComponent implements OnInit {
   }
 
   addQuestion() {
-    const newQuestion = this.questionForm.getRawValue();
+    if (this.questionForm.valid) {
+      const newQuestion = this.questionForm.getRawValue();
+      this.createdQuestion.emit(newQuestion)
 
-    console.log(newQuestion)
+      const topicValue = this.questionForm.get('topicName')?.value
+      const topicIdValue = this.questionForm.get('topicId')?.value
+
+      this.questionForm.reset({ topicName: topicValue, topicId: topicIdValue })
+    } else {
+      this.snakeBar.showMessage("The required fields missing")
+    }
   }
 
-
-
-  onSelect(selected: any) {
+  onSelectTopic(selected: any) {
     this.questionForm.patchValue({ topicName: selected.name, topicId: selected.id })
-  }
-
-  onTyping(text: any) {
-    this.questionForm.patchValue({ topicName: text, topicId: null })
   }
 }

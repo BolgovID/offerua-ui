@@ -2,16 +2,17 @@ section {
   display: flex;
   flex-direction: column;
   background: transparent;
-  border: 1px solid lightgray;
+  border: 1px solid var(--border-color);
   border-radius: var(--border-radius);
   width: 100%;
-  padding: var(--content-padding);
+  padding: 15px;
 
   .question {
     display: flex;
 
     p {
       font-size: var(--content-font-size);
+      color: var(--text-color); 
     }
   }
 
@@ -24,7 +25,7 @@ section {
     color: gray;
 
     p {
-      font-size: var(--metainfo-content-size);
+      font-size: var(--metainfo-font-size);
     }
 
     mat-icon {

@@ -13,6 +13,13 @@ export interface QuestionDto {
     probability: number
 }
 
+export interface QuestionWithTopicIdDto {
+    id: string,
+    question: string,
+    topicId: string,
+    probability: number
+}
+
 
 export interface TechnologyDto{
     id: string,

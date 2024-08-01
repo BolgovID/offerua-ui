@@ -32,6 +32,8 @@
 
         h1 {
           font-size: var(--page-header-font-size);
+          color: var(--text-color);
+
         }
 
         p {
@@ -50,7 +52,6 @@
   .search-content {
     display: flex;
     justify-content: center;
-    height: 100%;
     margin-top: 35px;
 
 

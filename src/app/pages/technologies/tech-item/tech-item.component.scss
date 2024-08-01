@@ -12,7 +12,7 @@
   padding: 15px;
   background: transparent;
   border-radius: var(--border-radius);
-  border: 1px solid lightgray;
+  border: 1px solid var(--border-color);
   cursor: pointer;
   justify-content: space-between;
 
@@ -45,10 +45,11 @@
       font-weight: bold;
       height: 100%;
       border-radius: 8px;
+      color: var(--text-color)
     }
   }
 
   &:hover {
-    background-color: #E9EDF5;
+    background-color: var(--bg-secondary);
   }
 }

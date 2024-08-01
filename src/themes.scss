@@ -1,11 +1,14 @@
 :root {
-  --primal: #692BD4;
+  --primal: #7940ec;
   --primal-soft: #917fd8;
 
   --bg-primal: #FFF;
   --bg-secondary: #F1F2F8;
 
+  --border-color: lightgray;
+
   --bg-icon: #cdbcee;
+  --text-color: black;
 
   --page-header-font-size: 30px;
 
@@ -14,6 +17,14 @@
   --metainfo-font-size: 14px;
 
   --border-radius: 5px;
-  --content-margin: 10px;
   --content-padding: 15px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg-primal:  #222;
+    --bg-secondary:#141414;
+    --border-color: rgb(49, 49, 49);
+    --text-color: #dedede;
+  }
 }

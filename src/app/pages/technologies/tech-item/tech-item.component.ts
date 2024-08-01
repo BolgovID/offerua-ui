@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {TechDto} from "../../../services/topics/technology.interface";
+import {TechDto} from "../../../services/technologies/technology.interface";
 
 @Component({
   selector: 'offer-tech-item',

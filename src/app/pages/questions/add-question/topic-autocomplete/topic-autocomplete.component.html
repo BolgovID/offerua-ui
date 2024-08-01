@@ -1,0 +1,20 @@
+<section>
+    <form [formGroup]="dropdownForm">
+        <div class="search-bar">
+            <label for="autocomplete">
+            </label>
+            <input id="autocomplete" placeholder="Choose topic" class="search-input" autocomplete="off"
+                formControlName="search" (input)="onTyping($event)" (click)="toggleDropDown()">
+            <mat-icon *ngIf="!showDropDown">keyboard_arrow_down</mat-icon>
+            <mat-icon *ngIf="showDropDown">keyboard_arrow_up</mat-icon>
+        </div>
+        <div clickOutside [elementId]="'autocomplete'" (clickOutside)="toggleDropDown()" *ngIf="showDropDown">
+            <ul class="topics-container-dropdown">
+                <li *ngFor="let topic of topics | searchFilter: getSearchValue()" (click)="selectValue(topic)"
+                    class="option">
+                    {{topic.name}}
+                </li>
+            </ul>
+        </div>
+    </form>
+</section>

@@ -20,13 +20,13 @@
           </div>
           <div class="suggest">
             <mat-icon>add</mat-icon>
-            <a (click)="switchEditingMode()">Suggest a new question</a>
+            <a (click)="showCreateQuestionMenu()">Suggest a new question</a>
           </div>
         </div>
         <div></div>
         <div class="search-results">
-          <div *ngIf="isEditing">
-           <offer-add-question [topics]="model.topics"/>
+          <div *ngIf="editingMode">
+           <offer-add-question [topics]="model.topics" (createdQuestion)="createQuestion($event)"/>
           </div>
           <div>
             <offer-list-question-item [questions]="model.questions.content"></offer-list-question-item>
